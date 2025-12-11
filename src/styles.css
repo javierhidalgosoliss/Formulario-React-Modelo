@@ -463,3 +463,199 @@ textarea {
   color: #2e7d32;
   white-space: nowrap;
 }
+
+/* ...existing code... */
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1200px) {
+  .product-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .list-panel {
+    min-width: 400px;
+    max-width: 100%;
+  }
+
+  .form-panel {
+    flex: 0 0 300px;
+  }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 992px) {
+  .product-content {
+    flex-direction: column;
+  }
+
+  .form-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    order: 1;
+  }
+
+  .list-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
+    order: 2;
+  }
+
+  .list-panel__body,
+  .list-panel__body--expanded {
+    max-height: 400px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .product-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .product-header__title {
+    font-size: 1.4rem;
+  }
+
+  .product-header__buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-header {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .product-content {
+    padding: 15px;
+  }
+
+  .form-panel__body {
+    padding: 15px;
+  }
+
+  .input-group--row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .input-group--flex {
+    width: 100%;
+  }
+
+  /* Tabla responsive */
+  .product-table {
+    font-size: 0.85rem;
+  }
+
+  .product-table th,
+  .product-table td {
+    padding: 8px 10px;
+  }
+
+  .product-table__image {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Ocultar columna descripción en móvil si la hubiera */
+  .product-table th--category,
+  .product-table td--category {
+    min-width: 100px;
+  }
+
+  .category-badge {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+  .product-header__title {
+    font-size: 1.2rem;
+  }
+
+  .product-header__buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-header {
+    width: 100%;
+  }
+
+  .form-panel__header {
+    padding: 12px 15px;
+  }
+
+  .form-panel__title {
+    font-size: 1rem;
+  }
+
+  .list-panel__header {
+    padding: 12px 15px;
+  }
+
+  .list-panel__title {
+    font-size: 1rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-danger,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  /* Tabla: scroll horizontal en móviles muy pequeños */
+  .list-panel__body {
+    overflow-x: auto;
+  }
+
+  .product-table {
+    min-width: 500px;
+  }
+
+  /* Alternativa: ocultar columnas menos importantes */
+  .product-table th:nth-child(2),
+  .product-table td:nth-child(2) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* ==================== MEJORAS TÁCTILES ==================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Dispositivos táctiles */
+  .btn-header,
+  .btn-primary,
+  .btn-danger,
+  .btn-search {
+    min-height: 44px;
+  }
+
+  .product-table tr {
+    min-height: 60px;
+  }
+
+  .input-field,
+  .textarea-field,
+  .search-input {
+    font-size: 16px; /* Evita zoom en iOS */
+    min-height: 44px;
+  }
+}
